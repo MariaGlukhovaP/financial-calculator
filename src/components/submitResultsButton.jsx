@@ -1,8 +1,10 @@
-export const SubmitResultsButton = ({ calculationResult }) => (
-  <div>
-    <h3>Отправить результаты</h3>
-    <button
-      onClick={() => {
+import { Button } from "./button/button";
+
+export const SubmitResultsButton = ({ calculationResult }) => {
+  return (
+    <Button
+      type="submit"
+      onSubmit={() => {
         alert(
           `Данные отправлены:\nСумма кредита: ${calculationResult.loanAmount.toLocaleString(
             "ru-RU"
@@ -11,8 +13,8 @@ export const SubmitResultsButton = ({ calculationResult }) => (
           )} руб`
         );
       }}
-    >
-      Отправить результаты на почту
-    </button>
-  </div>
-);
+      title="Отправить"
+      viewVariant="primary"
+    />
+  );
+};

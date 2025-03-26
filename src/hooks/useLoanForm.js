@@ -4,6 +4,13 @@ export const useLoanForm = (initialValues) => {
   const [formData, setFormData] = useState(initialValues);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const RESET_VALUES = {
+    itemPrice: 0,
+    interestRate: 0,
+    downPayment: 0,
+    loanTerm: 0,
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -13,7 +20,7 @@ export const useLoanForm = (initialValues) => {
   };
 
   const handleReset = () => {
-    setFormData(initialValues);
+    setFormData(RESET_VALUES);
     setIsSubmitted(false);
   };
 

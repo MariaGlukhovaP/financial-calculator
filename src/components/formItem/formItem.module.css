@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  color: #424242;
+  font-size: 14px;
+}
+
+.input {
+  color: #202020;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  height: 60px;
+  width: 300px;
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 24px;
+  background-color: #d7d7d7;
+  font-family: "Roboto", sans-serif;
+}
+
+.label {
+  margin: 0 0 5px 10px;
+}
+
+@media (max-width: 1200px) {
+  .input {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .input {
+    width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .input {
+    width: 300px;
+  }
+}

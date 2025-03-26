@@ -1,59 +1,52 @@
-export const LoanForm = ({
-  formData: { itemPrice, interestRate, downPayment, loanTerm },
-  onInputChange,
-  onSubmit,
-  onReset,
-}) => (
-  <form onSubmit={onSubmit}>
-    <div>
-      <label htmlFor="itemPrice">Общая сумма (руб):</label>
-      <input
+import { Button } from "../button/button";
+import { FormItem } from "../formItem/formItem";
+import styles from "./loanForm.module.css";
+
+export const LoanForm = ({ formData, onInputChange, onSubmit, onReset }) => {
+  const { itemPrice, interestRate, downPayment, loanTerm } = formData;
+
+  return (
+    <form onSubmit={onSubmit} className={styles.form}>
+      <FormItem
+        label="Общая сумма (руб):"
         id="itemPrice"
         type="number"
-        name="itemPrice"
         value={itemPrice}
-        onChange={onInputChange}
+        onInputChange={onInputChange}
       />
-    </div>
-
-    <div>
-      <label htmlFor="interestRate">Процентная ставка (%):</label>
-      <input
+      <FormItem
+        label="Процентная ставка (%):"
         id="interestRate"
         type="number"
         name="interestRate"
         value={interestRate}
-        onChange={onInputChange}
+        onInputChange={onInputChange}
       />
-    </div>
-
-    <div>
-      <label htmlFor="downPayment">Первоначальный взнос (руб):</label>
-      <input
+      <FormItem
+        label="Первоначальный взнос (руб):"
         id="downPayment"
         type="number"
         name="downPayment"
         value={downPayment}
-        onChange={onInputChange}
+        onInputChange={onInputChange}
       />
-    </div>
-
-    <div>
-      <label htmlFor="loanTerm">Срок кредита (лет):</label>
-      <input
+      <FormItem
+        label="Срок кредита (лет):"
         id="loanTerm"
         type="number"
         name="loanTerm"
         value={loanTerm}
-        onChange={onInputChange}
+        onInputChange={onInputChange}
       />
-    </div>
-
-    <div>
-      <button type="submit">Рассчитать</button>
-      <button type="button" onClick={onReset}>
-        Сбросить
-      </button>
-    </div>
-  </form>
-);
+      <div className={styles.buttonContainer}>
+        <Button type="submit" title="Рассчитать" viewVariant="primary" />
+        <Button
+          type="button"
+          onButtonClick={onReset}
+          title="Сбросить"
+          viewVariant="secondary"
+        />
+      </div>
+    </form>
+  );
+};

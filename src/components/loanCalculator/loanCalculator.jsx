@@ -2,7 +2,6 @@ import { useLoanCalculator } from "../../hooks/useLoanCalculator";
 import { useLoanForm } from "../../hooks/useLoanForm";
 import { CalculationResults } from "../calculationResults/calculationResults";
 import { LoanForm } from "../loanForm/loanForm";
-import { SubmitResultsButton } from "../submitResultsButton";
 import styles from "./loanCalculator.module.css";
 
 const INITIAL_VALUES = {
@@ -31,19 +30,22 @@ export const LoanCalculator = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Кредитный калькулятор</h1>
-      <LoanForm
-        formData={formData}
-        onInputChange={handleInputChange}
-        onSubmit={handleSubmit}
-        onReset={handleReset}
-      />
-
-      {isSubmitted && (
-        <>
+      <p className={styles.description}>
+        Вы можете рассчитать ежемесячный платеж и ставку по кредиту, а также
+        многие другие метрики, используя наш калькулятор. У вас так же есть
+        возможность получить вычисленные данные на электронную почту.
+      </p>
+      <div className={styles.formContainer}>
+        <LoanForm
+          formData={formData}
+          onInputChange={handleInputChange}
+          onSubmit={handleSubmit}
+          onReset={handleReset}
+        />
+        {isSubmitted && (
           <CalculationResults calculationResult={calculationResult} />
-          <SubmitResultsButton calculationResult={calculationResult} />
-        </>
-      )}
+        )}
+      </div>
     </div>
   );
 };
