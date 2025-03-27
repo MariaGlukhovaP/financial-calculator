@@ -9,14 +9,13 @@ export const LoanForm = ({ formData, onInputChange, onSubmit, onReset }) => {
     <form onSubmit={onSubmit} className={styles.form}>
       <FormItem
         label="Общая сумма (руб):"
-        id="itemPrice"
         type="number"
+        name="itemPrice"
         value={itemPrice}
         onInputChange={onInputChange}
       />
       <FormItem
         label="Процентная ставка (%):"
-        id="interestRate"
         type="number"
         name="interestRate"
         value={interestRate}
@@ -24,7 +23,6 @@ export const LoanForm = ({ formData, onInputChange, onSubmit, onReset }) => {
       />
       <FormItem
         label="Первоначальный взнос (руб):"
-        id="downPayment"
         type="number"
         name="downPayment"
         value={downPayment}
@@ -32,7 +30,6 @@ export const LoanForm = ({ formData, onInputChange, onSubmit, onReset }) => {
       />
       <FormItem
         label="Срок кредита (лет):"
-        id="loanTerm"
         type="number"
         name="loanTerm"
         value={loanTerm}
