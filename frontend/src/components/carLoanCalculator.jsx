@@ -5,6 +5,7 @@ const INITIAL_VALUES = {
   interestRate: 3.5,
   downPayment: 100_000,
   loanTerm: 5,
+  email: "",
 };
 
 export const CarLoanCalculator = () => {

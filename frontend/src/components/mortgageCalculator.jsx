@@ -5,6 +5,7 @@ const INITIAL_VALUES = {
   interestRate: 9.6,
   downPayment: 500_000,
   loanTerm: 20,
+  email: "",
 };
 
 export const MortgageCalculator = () => {

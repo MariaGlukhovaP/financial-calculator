@@ -5,6 +5,7 @@ const INITIAL_VALUES = {
   interestRate: 14.5,
   downPayment: 30_000,
   loanTerm: 3,
+  email: "",
 };
 
 export const ConsumerLoanCalculator = () => {

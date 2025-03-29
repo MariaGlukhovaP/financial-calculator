@@ -9,13 +9,14 @@ export const useLoanForm = (initialValues) => {
     interestRate: 0,
     downPayment: 0,
     loanTerm: 0,
+    email: "",
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: Number(value),
+      [name]: value,
     });
   };
 

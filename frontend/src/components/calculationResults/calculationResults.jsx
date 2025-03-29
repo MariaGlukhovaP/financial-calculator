@@ -2,7 +2,7 @@ import { SubmitResultsButton } from "../submitResultsButton";
 import { ResultItem } from "./../resultItem/resultItem";
 import styles from "./calculationResults.module.css";
 
-export const CalculationResults = ({ calculationResult }) => {
+export const CalculationResults = ({ calculationResult, email }) => {
   const {
     loanAmount,
     monthlyInterestRate,
@@ -41,7 +41,10 @@ export const CalculationResults = ({ calculationResult }) => {
             : "0"
         }
       />
-      <SubmitResultsButton calculationResult={calculationResult} />
+      <SubmitResultsButton
+        calculationResult={calculationResult}
+        email={email}
+      />
     </div>
   );
 };

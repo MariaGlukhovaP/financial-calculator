@@ -13,6 +13,8 @@ export const LoanCalculator = ({ calculatorName, initialValues }) => {
     setIsSubmitted,
   } = useLoanForm(initialValues);
 
+  const { email } = formData;
+
   const calculationResult = useLoanCalculator(formData);
 
   const handleSubmit = (e) => {
@@ -31,7 +33,10 @@ export const LoanCalculator = ({ calculatorName, initialValues }) => {
           onReset={handleReset}
         />
         {isSubmitted && (
-          <CalculationResults calculationResult={calculationResult} />
+          <CalculationResults
+            calculationResult={calculationResult}
+            email={email}
+          />
         )}
       </div>
     </div>

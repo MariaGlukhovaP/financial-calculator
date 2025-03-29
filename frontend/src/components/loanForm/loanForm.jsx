@@ -3,7 +3,7 @@ import { FormItem } from "../formItem/formItem";
 import styles from "./loanForm.module.css";
 
 export const LoanForm = ({ formData, onInputChange, onSubmit, onReset }) => {
-  const { itemPrice, interestRate, downPayment, loanTerm } = formData;
+  const { itemPrice, interestRate, downPayment, loanTerm, email } = formData;
 
   return (
     <form onSubmit={onSubmit} className={styles.form}>
@@ -34,6 +34,14 @@ export const LoanForm = ({ formData, onInputChange, onSubmit, onReset }) => {
         name="loanTerm"
         value={loanTerm}
         onInputChange={onInputChange}
+      />
+      <FormItem
+        label="Ваш email:"
+        type="email"
+        name="email"
+        value={email}
+        onInputChange={onInputChange}
+        placeholder="user123@gmail.com"
       />
       <div className={styles.buttonContainer}>
         <Button type="submit" title="Рассчитать" viewVariant="primary" />
